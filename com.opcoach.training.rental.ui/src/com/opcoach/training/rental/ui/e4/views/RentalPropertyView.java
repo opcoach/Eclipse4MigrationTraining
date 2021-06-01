@@ -1,11 +1,11 @@
-package com.opcoach.training.rental.ui.views;
+package com.opcoach.training.rental.ui.e4.views;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
-import org.eclipse.core.runtime.Platform;
-import org.eclipse.jface.viewers.ISelection;
-import org.eclipse.jface.viewers.IStructuredSelection;
+import javax.annotation.PostConstruct;
+
+import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -18,11 +18,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.IViewSite;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.PartInitException;
-import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
@@ -31,13 +26,7 @@ import com.opcoach.training.rental.ui.Messages;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
 
-/**
- *
- * @author olivier
- *  @deprecated  Use now the E4 corresponding view in e4.views
- */
-@Deprecated
-public class RentalPropertyView extends ViewPart implements ISelectionListener {
+public class RentalPropertyView   {
 	public static final String VIEW_ID = "com.opcoach.rental.ui.views.rentalView"; //$NON-NLS-1$
 
 	private Label rentedObjectLabel;
@@ -49,7 +38,7 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener {
 	public RentalPropertyView() {
 	}
 
-	@Override
+	@PostConstruct  
 	public void createPartControl(Composite parent) {
 		parent.setLayout(new GridLayout(1, false));
 
@@ -122,24 +111,26 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener {
 
 	}
 
-	@Override
+	
+	// E34 Check later for selection in PropertyView
+	/*@Override
 	public void init(IViewSite site) throws PartInitException {
 		super.init(site);
 		site.getPage().addSelectionListener(this);
-	}
+	}*/
 
 	/*
 	 * (non-Javadoc)
 	 * 
 	 * @see org.eclipse.ui.part.WorkbenchPart#dispose()
 	 */
-	@Override
-	public void dispose() {
+	// E34 Check later for selection in PropertyView
+/*	public void dispose() {
 		getSite().getPage().removeSelectionListener(this);
 		super.dispose();
-	}
+	}*/
 
-	@Override
+	@Focus
 	public void setFocus() {
 
 	}
@@ -150,8 +141,12 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener {
 	 * @see org.eclipse.ui.ISelectionListener#selectionChanged(org.eclipse.ui.
 	 * IWorkbenchPart, org.eclipse.jface.viewers.ISelection)
 	 */
-	@Override
-	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+	
+	
+	// E34 Check later for selection in PropertyView
+
+	
+/**	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
 		if (selection.isEmpty())
 			return;
 
@@ -164,6 +159,6 @@ public class RentalPropertyView extends ViewPart implements ISelectionListener {
 
 		}
 
-	}
+	} */
 
 }

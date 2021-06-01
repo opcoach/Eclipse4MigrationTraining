@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
 <plugin>
    <extension-point id="Palette" name="Palette" schema="schema/Palette.exsd"/>
+
    <extension
          point="org.eclipse.ui.preferencePages">
       <page
@@ -22,22 +22,12 @@
             name="Default Palette">
       </page>
    </extension>
-
-   <extension   point="org.eclipse.ui.views">
-      <category name="Rental"  id="com.opcoach.rental.ui"/>
-      <view
-            name="Rental Property view"
-            icon="icons/Rentals.png"
-            category="com.opcoach.rental.ui"
-            class="com.opcoach.training.rental.ui.views.RentalPropertyView"
-            id="com.opcoach.rental.ui.views.rentalView">
-         <description>
-            Vue de propriété de la location.
-         </description>
-      </view>
-      
-      
-      
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Rental"
+            id="com.opcoach.rental.ui">
+      </category>
       <view
             category="com.opcoach.rental.ui"
             class="com.opcoach.training.rental.ui.views.RentalAgencyView"
@@ -76,8 +66,6 @@
             class="com.opcoach.training.rental.ui.pref.RentalPrefInit">
       </initializer>
    </extension>
-   
- 
    <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
@@ -127,9 +115,7 @@
             name="Renta">
       </perspective>
    </extension>
-   
-   
-      <extension
+   <extension
          point="org.eclipse.ui.commands">
       <command
             id="com.opcoach.training.rental.ui.commands.MaCommande"
@@ -170,7 +156,6 @@
             </command>
          </menu>
       </menuContribution>
-      <!-- Ajout d'un menu dans le main menu -->
       <menuContribution
             allPopups="false"
             locationURI="menu:org.eclipse.ui.main.menu?after=additions">
@@ -212,7 +197,8 @@
       <activity
             id="com.opcoach.training.rental.ui.commands.activity1"
             name="%activity.name">
-         <enabledWhen></enabledWhen>
+         <enabledWhen>
+         </enabledWhen>
       </activity>
    </extension>
    <extension
@@ -228,6 +214,13 @@
             paletteClass="com.opcoach.training.rental.ui.palette.PaletteJaune">
       </palette>
    </extension>
-   
+   <extension
+         id="com.opcoach.training.rental.ui.fragment"
+         point="org.eclipse.e4.workbench.model">
+      <fragment
+            uri="fragment.e4xmi"
+            apply="always">
+      </fragment>
+   </extension>
 
 </plugin>
