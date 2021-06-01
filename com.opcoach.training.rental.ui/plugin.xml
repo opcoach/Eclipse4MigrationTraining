@@ -30,14 +30,6 @@
       </category>
       <view
             category="com.opcoach.rental.ui"
-            class="com.opcoach.training.rental.ui.views.RentalAgencyView"
-            icon="icons/Agency.png"
-            id="com.opcoach.rental.ui.rentalagencyview"
-            name="Rental Agency View"
-            restorable="true">
-      </view>
-      <view
-            category="com.opcoach.rental.ui"
             class="com.opcoach.training.rental.ui.views.RentalAgencyUIFormView"
             icon="icons/Agency.png"
             id="com.opcoach.training.rental.ui.agencyformview"

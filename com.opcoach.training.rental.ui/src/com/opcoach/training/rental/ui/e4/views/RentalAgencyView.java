@@ -1,13 +1,12 @@
-package com.opcoach.training.rental.ui.views;
+package com.opcoach.training.rental.ui.e4.views;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.eclipse.jface.action.MenuManager;
+import javax.annotation.PostConstruct;
+
+import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.jface.resource.ImageRegistry;
-import org.eclipse.jface.util.IPropertyChangeListener;
-import org.eclipse.jface.util.PropertyChangeEvent;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
@@ -22,22 +21,17 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Menu;
-import org.eclipse.ui.ISelectionListener;
-import org.eclipse.ui.IViewSite;
-import org.eclipse.ui.IWorkbenchPart;
-import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.part.ViewPart;
 
 import com.opcoach.training.rental.RentalAgency;
 import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.helpers.RentalAgencyGenerator;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
+import com.opcoach.training.rental.ui.views.AgencyTreeDragSourceListener;
+import com.opcoach.training.rental.ui.views.RentalProvider;
 
-@Deprecated
-public class RentalAgencyView extends ViewPart implements IPropertyChangeListener, ISelectionListener, RentalUIConstants
+public class RentalAgencyView  implements  RentalUIConstants
 {
 	public static final String VIEW_ID = "com.opcoach.rental.ui.rentalagencyview";
 
@@ -50,7 +44,7 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
+	@PostConstruct
 	public void createPartControl(Composite parent)
 	{
 		parent.setLayout(new GridLayout(1, false));
@@ -112,10 +106,14 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 				.setHelp(agencyViewer.getControl(), "com.opcoach.training.rental.ui.rentalContext");
 
 		// Autorise le popup sur le treeviewer
+		
+		// E34 Check for the popup menu for Agency view
+		/*
 		MenuManager menuManager = new MenuManager();
 		Menu menu = menuManager.createContextMenu(agencyViewer.getControl());
 		agencyViewer.getControl().setMenu(menu);
 		getSite().registerContextMenu(menuManager, agencyViewer);
+		*/
 
 		// L'arbre est draggable
 		DragSource ds = new DragSource(agencyViewer.getControl(), DND.DROP_COPY);
@@ -123,10 +121,13 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		ds.setTransfer(ts);
 		ds.addDragListener(new AgencyTreeDragSourceListener(agencyViewer));
 
-		getSite().setSelectionProvider(agencyViewer);
+		// E34 Check the selection for agency view
+		//getSite().setSelectionProvider(agencyViewer);
 
 	}
 
+	// E34 Check the selection for agency view
+	/*
 	@Override
 	public void init(IViewSite site) throws PartInitException
 	{
@@ -149,22 +150,26 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		getSite().getPage().removeSelectionListener(this);
 
 		super.dispose();
-	}
+	}*/
 
+	
+	// E34 Migrate the preference change listener
+	/*
 	@Override
 	public void propertyChange(PropertyChangeEvent event)
 	{
 		provider.initPalette();
 		agencyViewer.refresh();
-	}
+	}*/
 
-	@Override
+	@Focus
 	public void setFocus()
 	{
 		// TODO Auto-generated method stub
 
 	}
-
+	// E34 Check the selection for agency view
+/*
 	@Override
 	public void selectionChanged(IWorkbenchPart part, ISelection selection)
 	{
@@ -173,6 +178,6 @@ public class RentalAgencyView extends ViewPart implements IPropertyChangeListene
 		if (part != this)
 			agencyViewer.setSelection(selection, true);
 
-	}
+	}*/
 
 }
