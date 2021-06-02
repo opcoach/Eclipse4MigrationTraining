@@ -4,10 +4,15 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import javax.inject.Named;
 
-import org.eclipse.e4.core.contexts.IEclipseContext;
+import org.eclipse.core.runtime.Platform;
+import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
-import org.eclipse.e4.ui.model.application.MApplication;
+import org.eclipse.e4.ui.services.IServiceConstants;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -20,10 +25,10 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
+import org.eclipse.ui.IWorkbenchPart;
 
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
-import com.opcoach.training.rental.core.RentalCoreActivator;
 import com.opcoach.training.rental.ui.Messages;
 import com.opcoach.training.rental.ui.RentalUIActivator;
 import com.opcoach.training.rental.ui.RentalUIConstants;
@@ -99,6 +104,8 @@ public class RentalPropertyView   {
 
 	public void setRental(Rental r) {
 
+		if (rentedObjectLabel == null) return;
+		
 		if (r == null) {
 			rentedObjectLabel.setText(" ");
 			customerNameLabel.setText(" ");
@@ -115,23 +122,6 @@ public class RentalPropertyView   {
 	}
 
 	
-	// E34 Check later for selection in PropertyView
-	/*@Override
-	public void init(IViewSite site) throws PartInitException {
-		super.init(site);
-		site.getPage().addSelectionListener(this);
-	}*/
-
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.ui.part.WorkbenchPart#dispose()
-	 */
-	// E34 Check later for selection in PropertyView
-/*	public void dispose() {
-		getSite().getPage().removeSelectionListener(this);
-		super.dispose();
-	}*/
 
 	@Focus
 	public void setFocus() {
@@ -146,22 +136,14 @@ public class RentalPropertyView   {
 	 */
 	
 	
-	// E34 Check later for selection in PropertyView
-
 	
-/**	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		if (selection.isEmpty())
-			return;
-
-		if (selection instanceof IStructuredSelection) {
-			Object sel = ((IStructuredSelection) selection).getFirstElement();
-
-			// La selection courante est elle un Rental ou adaptable en Rental ?
-			Rental r = (Rental) Platform.getAdapterManager().getAdapter(sel, Rental.class);
+	@Inject @Optional
+	public void reactOnSelect(@Named(IServiceConstants.ACTIVE_SELECTION) Rental r) {
+		
 			setRental(r);
 
 		}
 
-	} */
+
 
 }

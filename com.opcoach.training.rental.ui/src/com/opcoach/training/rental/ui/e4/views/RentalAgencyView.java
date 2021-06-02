@@ -4,9 +4,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.annotation.PostConstruct;
+import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.jface.viewers.ISelectionChangedListener;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
@@ -38,14 +43,14 @@ public class RentalAgencyView  implements  RentalUIConstants
 	private TreeViewer agencyViewer;
 
 	private RentalProvider provider;
-
+	
 	public RentalAgencyView()
 	{
 		// TODO Auto-generated constructor stub
 	}
 
 	@PostConstruct
-	public void createPartControl(Composite parent)
+	public void createPartControl(Composite parent, ESelectionService esel)
 	{
 		parent.setLayout(new GridLayout(1, false));
 
@@ -121,11 +126,18 @@ public class RentalAgencyView  implements  RentalUIConstants
 		ds.setTransfer(ts);
 		ds.addDragListener(new AgencyTreeDragSourceListener(agencyViewer));
 
-		// E34 Check the selection for agency view
-		//getSite().setSelectionProvider(agencyViewer);
+		agencyViewer.addSelectionChangedListener(new ISelectionChangedListener() {
+			
+			@Override
+			public void selectionChanged(SelectionChangedEvent event) {
+				IStructuredSelection iss = event.getStructuredSelection();
+				esel.setSelection(iss.size() == 1 ? iss.getFirstElement() : iss.toArray());
+				
+			}
+		});
 
 	}
-
+	// TODO 
 	// E34 Check the selection for agency view
 	/*
 	@Override
