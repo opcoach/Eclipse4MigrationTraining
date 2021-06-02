@@ -7,11 +7,9 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.eclipse.core.runtime.Platform;
 import org.eclipse.e4.core.di.annotations.Optional;
 import org.eclipse.e4.ui.di.Focus;
 import org.eclipse.e4.ui.services.IServiceConstants;
-import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
@@ -25,7 +23,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.ui.IWorkbenchPart;
 
 import com.opcoach.training.rental.Rental;
 import com.opcoach.training.rental.RentalAgency;
@@ -143,6 +140,16 @@ public class RentalPropertyView   {
 			setRental(r);
 
 		}
+
+	@Inject @Optional
+	public void reactOnSelectFromE3(@Named(IServiceConstants.ACTIVE_SELECTION) IStructuredSelection iss) {
+		
+			Object sel = iss.getFirstElement();
+			if (sel instanceof Rental)
+				setRental((Rental) sel);
+
+		}
+
 
 
 
