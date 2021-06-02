@@ -5,7 +5,9 @@ import java.text.SimpleDateFormat;
 
 import javax.annotation.PostConstruct;
 
+import org.eclipse.e4.core.contexts.IEclipseContext;
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.model.application.MApplication;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -39,8 +41,9 @@ public class RentalPropertyView   {
 	}
 
 	@PostConstruct  
-	public void createPartControl(Composite parent) {
+	public void createPartControl( Composite parent, RentalAgency a) {
 		parent.setLayout(new GridLayout(1, false));
+		
 
 		Group infoGroup = new Group(parent, SWT.NONE);
 		infoGroup.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
@@ -88,8 +91,8 @@ public class RentalPropertyView   {
 		endDateLabel.setLayoutData(new GridData(SWT.LEFT, SWT.FILL, true, false, 1, 1));
 
 		// Fill with sample
-		RentalAgency agency = RentalCoreActivator.getAgency();
-		setRental(agency.getRentals().get(0));
+		//Rental a = RentalCoreActivator.getAgency();
+		setRental(a.getRentals().get(0));
 
 
 	}
