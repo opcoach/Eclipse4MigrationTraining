@@ -7,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
 import org.eclipse.e4.ui.di.Focus;
+import org.eclipse.e4.ui.services.EMenuService;
 import org.eclipse.e4.ui.workbench.modeling.ESelectionService;
 import org.eclipse.jface.resource.ImageRegistry;
 import org.eclipse.jface.viewers.ISelectionChangedListener;
@@ -50,7 +51,7 @@ public class RentalAgencyView  implements  RentalUIConstants
 	}
 
 	@PostConstruct
-	public void createPartControl(Composite parent, ESelectionService esel)
+	public void createPartControl(Composite parent, ESelectionService esel, EMenuService menuService)
 	{
 		parent.setLayout(new GridLayout(1, false));
 
@@ -119,6 +120,7 @@ public class RentalAgencyView  implements  RentalUIConstants
 		agencyViewer.getControl().setMenu(menu);
 		getSite().registerContextMenu(menuManager, agencyViewer);
 		*/
+		menuService.registerContextMenu(agencyViewer.getTree(), "com.opcoach.training.rental.ui.popupmenu.mycommands");
 
 		// L'arbre est draggable
 		DragSource ds = new DragSource(agencyViewer.getControl(), DND.DROP_COPY);
