@@ -24,4 +24,11 @@
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Q9hq0MUPEeu3aJesIbguLw" featurename="handlers" parentElementId="xpath:/">
     <elements xsi:type="commands:Handler" xmi:id="_S_81kMUPEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handler.0" contributionURI="bundleclass://com.opcoach.training.rental.ui/com.opcoach.training.rental.ui.e4.handlers.HelloWorldHandler" command="_gVyqwMUOEeu3aJesIbguLw"/>
   </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_BTeFYMUSEeu3aJesIbguLw" featurename="menuContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:MenuContribution" xmi:id="_EL-jkMUSEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.menucontribution.0" positionInParent="after=additions" parentId="org.eclipse.ui.main.menu">
+      <children xsi:type="menu:Menu" xmi:id="_OVDFUMUSEeu3aJesIbguLw" elementId="id.mymenu" label="FTD Menu">
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_QPwegMUSEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handledmenuitem.helloworldinmainmenu" label="Hello World in main Menu" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/Agency.png" command="_gVyqwMUOEeu3aJesIbguLw"/>
+      </children>
+    </elements>
+  </fragments>
 </fragment:ModelFragments>
