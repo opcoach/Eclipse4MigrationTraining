@@ -6,6 +6,15 @@
         <tags>ViewMenu</tags>
         <children xsi:type="menu:HandledMenuItem" xmi:id="_mDoh4MUPEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handledmenuitem.helloworld" label="Hello world" command="_gVyqwMUOEeu3aJesIbguLw"/>
       </menus>
+      <toolbar xmi:id="_N2UsgMUTEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.toolbar.0">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_R0WBQMUTEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handledtoolitem.0" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/Agency.png" command="_gVyqwMUOEeu3aJesIbguLw"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_nvTcsMUTEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handledtoolitem.mytoolbarmenu" label="My Toolbar Menu" iconURI="">
+          <menu xmi:id="_oBLP0MUTEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.menu.1">
+            <children xsi:type="menu:HandledMenuItem" xmi:id="_uy4NIMUTEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handledmenuitem.0" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/Agency.png" command="_gVyqwMUOEeu3aJesIbguLw"/>
+            <children xsi:type="menu:DynamicMenuContribution" xmi:id="_MmPIMMUUEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.dynamicmenucontribution.0" label="Spies" contributionURI="bundleclass://org.eclipse.e4.tools.spy/org.eclipse.e4.tools.spy.SpyProcessor"/>
+          </menu>
+        </children>
+      </toolbar>
     </elements>
     <elements xsi:type="basic:PartDescriptor" xmi:id="_dDqDcMLQEeuzDNJyC15jPQ" elementId="com.opcoach.rental.ui.rentalagencyview" label="Rental Agency View E4" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.opcoach.training.rental.ui/com.opcoach.training.rental.ui.e4.views.RentalAgencyView">
       <menus xsi:type="menu:PopupMenu" xmi:id="_neQQUMUQEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.popupmenu.mycommands" label="My commands">
