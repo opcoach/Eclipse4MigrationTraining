@@ -40,4 +40,17 @@
       </children>
     </elements>
   </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_L_0zAMUVEeu3aJesIbguLw" featurename="trimContributions" parentElementId="xpath:/" positionInList="">
+    <elements xsi:type="menu:TrimContribution" xmi:id="_RudJwMUVEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.trimcontribution.0" parentId="org.eclipse.ui.main.toolbar" positionInParent="after=additions">
+      <children xsi:type="menu:ToolBar" xmi:id="_SZAioMUVEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.toolbar.1">
+        <children xsi:type="menu:HandledToolItem" xmi:id="_S9JxgMUVEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handledtoolitem.1" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/sample.gif" command="_gVyqwMUOEeu3aJesIbguLw"/>
+      </children>
+    </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_g5vBIMUVEeu3aJesIbguLw" featurename="toolBarContributions" parentElementId="xpath:/">
+    <elements xsi:type="menu:ToolBarContribution" xmi:id="_iGiLcMUVEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.toolbarcontribution.0" parentId="main" positionInParent="after=additions">
+      <children xsi:type="menu:HandledToolItem" xmi:id="_qvoIMMUVEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handledtoolitem.2" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/Agency.png" command="_gVyqwMUOEeu3aJesIbguLw"/>
+      <children xsi:type="menu:ToolControl" xmi:id="_dnn6sMUWEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.toolcontrol.0" contributionURI="bundleclass://com.opcoach.training.rental.ui/com.opcoach.training.rental.ui.e4.handlers.ToolControlSample"/>
+    </elements>
+  </fragments>
 </fragment:ModelFragments>
