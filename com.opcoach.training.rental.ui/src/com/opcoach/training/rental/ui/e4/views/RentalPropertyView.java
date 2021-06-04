@@ -144,6 +144,9 @@ public class RentalPropertyView   {
 	@Inject @Optional
 	public void reactOnSelectFromE3(@Named(IServiceConstants.ACTIVE_SELECTION) IStructuredSelection iss) {
 		
+		if (iss == null)
+			return;
+		
 			Object sel = iss.getFirstElement();
 			if (sel instanceof Rental)
 				setRental((Rental) sel);

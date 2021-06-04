@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="ASCII"?>
-<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmi:id="_3um1YMLLEeuzDNJyC15jPQ">
+<fragment:ModelFragments xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://www.eclipse.org/ui/2010/UIModel/application" xmlns:basic="http://www.eclipse.org/ui/2010/UIModel/application/descriptor/basic" xmlns:commands="http://www.eclipse.org/ui/2010/UIModel/application/commands" xmlns:fragment="http://www.eclipse.org/ui/2010/UIModel/fragment" xmlns:menu="http://www.eclipse.org/ui/2010/UIModel/application/ui/menu" xmi:id="_3um1YMLLEeuzDNJyC15jPQ">
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_-xQYwMLLEeuzDNJyC15jPQ" featurename="descriptors" parentElementId="xpath:/">
-    <elements xsi:type="basic:PartDescriptor" xmi:id="_NOF1wMLMEeuzDNJyC15jPQ" elementId="com.opcoach.rental.ui.views.rentalView" label="Rental Property E4" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/Rentals.png" contributionURI="bundleclass://com.opcoach.training.rental.ui/com.opcoach.training.rental.ui.e4.views.RentalPropertyView"/>
+    <elements xsi:type="basic:PartDescriptor" xmi:id="_NOF1wMLMEeuzDNJyC15jPQ" elementId="com.opcoach.rental.ui.views.rentalView" label="Rental Property E4" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/Rentals.png" contributionURI="bundleclass://com.opcoach.training.rental.ui/com.opcoach.training.rental.ui.e4.views.RentalPropertyView">
+      <menus xmi:id="_focnIMUPEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.menu.0">
+        <tags>ViewMenu</tags>
+        <children xsi:type="menu:HandledMenuItem" xmi:id="_mDoh4MUPEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handledmenuitem.helloworld" label="Hello world" command="_gVyqwMUOEeu3aJesIbguLw"/>
+      </menus>
+    </elements>
     <elements xsi:type="basic:PartDescriptor" xmi:id="_dDqDcMLQEeuzDNJyC15jPQ" elementId="com.opcoach.rental.ui.rentalagencyview" label="Rental Agency View E4" iconURI="platform:/plugin/com.opcoach.training.rental.ui/icons/Agency.png" contributionURI="bundleclass://com.opcoach.training.rental.ui/com.opcoach.training.rental.ui.e4.views.RentalAgencyView"/>
   </fragments>
   <fragments xsi:type="fragment:StringModelFragment" xmi:id="_1GbrcMOKEeuzDNJyC15jPQ" featurename="addons" parentElementId="xpath:/">
     <elements xsi:type="application:Addon" xmi:id="_2etF8MOKEeuzDNJyC15jPQ" elementId="com.opcoach.training.rental.ui.addon.0" contributionURI="bundleclass://com.opcoach.training.rental.ui/com.opcoach.training.rental.ui.RentalAddon">
       <persistedState key="offlineMode" value="true"/>
     </elements>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_fR1TYMUOEeu3aJesIbguLw" featurename="commands" parentElementId="xpath:/">
+    <elements xsi:type="commands:Command" xmi:id="_gVyqwMUOEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.command.helloworld" commandName="Hello World"/>
+  </fragments>
+  <fragments xsi:type="fragment:StringModelFragment" xmi:id="_Q9hq0MUPEeu3aJesIbguLw" featurename="handlers" parentElementId="xpath:/">
+    <elements xsi:type="commands:Handler" xmi:id="_S_81kMUPEeu3aJesIbguLw" elementId="com.opcoach.training.rental.ui.handler.0" contributionURI="bundleclass://com.opcoach.training.rental.ui/com.opcoach.training.rental.ui.e4.handlers.HelloWorldHandler" command="_gVyqwMUOEeu3aJesIbguLw"/>
   </fragments>
 </fragment:ModelFragments>
