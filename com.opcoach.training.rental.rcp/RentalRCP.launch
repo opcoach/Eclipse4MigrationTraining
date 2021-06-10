@@ -165,6 +165,10 @@
         <setEntry value="org.w3c.dom.svg@default:default"/>
     </setAttribute>
     <setAttribute key="selected_workspace_bundles">
+        <setEntry value="com.ftd.airportmodel@default:default"/>
+        <setEntry value="com.ftd.citytransport.model.edit@default:default"/>
+        <setEntry value="com.ftd.citytransport.model.editor@default:default"/>
+        <setEntry value="com.ftd.citytransport.model@default:default"/>
         <setEntry value="com.opcoach.training.rental.adapters@default:true"/>
         <setEntry value="com.opcoach.training.rental.core@default:default"/>
         <setEntry value="com.opcoach.training.rental.rcp@default:default"/>
